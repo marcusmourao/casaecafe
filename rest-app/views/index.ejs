@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<head>
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <form action="/" method="post">
+    <div class="row">
+      <form action="/" method="post" class="col s12 m12 l12">
+        <div class="row">
+          <div class="input-field col s12 offset-m3 m6 offset-l3 l6">
+            <input placeholder="Entre com o id do usuário" id="userId" name="userId" type="text">
+            <label for="userId">Id do Usuário</label>
+            <button class="btn btn-large">Enviar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </form>
+</div>
+
+</body>
 </html>
