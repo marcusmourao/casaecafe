@@ -11,7 +11,10 @@ router.post('/', function (req, res, next) {
   var userId = req.body.userId;
   request('http://ec2-35-164-139-210.us-west-2.compute.amazonaws.com/hirers/'+ userId+'/opportunities', function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      res.send(response); // Print the result.
+      var obj = JSON.parse(body);
+      var count = obj.length;
+      console.log(count);
+      res.send(count.toString());
     }
   })
 });
