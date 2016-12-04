@@ -1,53 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var request = require('request');
-var data = {
-  "id": 1305951,
-  "title":"Vaga para Empregada Domstica",
-  "description":"Casal sem filhos e sem animais domsticos  procura empregada",
-  "created_at":"2016-07-01 13:06:12",
-  "is_contact_available":true,
-  "is_active":true,
-  "hirer":{
-    "id": 130595,
-    "name":"Marcus Marangon Mourão",
-    "account_type":"pf",
-    "cnpj":null,
-    "company_contact_name":null,
-    "phone":"(21) 99870-0327",
-    "email":"felipe_med@yahoo.com.br",
-    "mobile_phone":"(21) 93234-8378",
-    "is_plan_active":true
-  },
-  "location":{
-    "neighborhood":"Ipanema",
-    "address":"Prudente de Morais",
-    "address_type":"Rua",
-    "latitude":-22.9851707,
-    "longitude":-43.2071601,
-    "city_id":"6861",
-    "city":"Rio de Janeiro",
-    "zipcode":"22420043",
-    "state":"RJ"
-  },
-  "frequency":"mensalista_2x",
-  "is_automatic":false,
-  "score":3,
-  "category":{
-    "id":1,
-    "name":"Empregada Domstica"
-  },
-  "salary_requirements":1100,
-  "characteristics":[
-
-  ],
-  "starts":"esse_mes",
-  "amount_candidates":19,
-  "amount_visualizations":58,
-  "feedback":"",
-  "salary_research":"",
-  "relevancy":""
-};
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index');
@@ -70,10 +23,100 @@ router.get( '/create', function (req, res, next) {
 
 });
 router.post('/send', function (req, res, next) {
+  // First Get all Parameters from form
+  var id = req.body.id;
+  var title = req.body.title;
+  var description = req.body.description;
+  var created_at = req.body.created_at;
+  var is_contact_available = req.body.is_contact_available;
+  var is_active = req.body.is_active;
+  var idHirer = req.body.idHirer;
+  var nameHirer = req.body.nameHirer;
+  var account_type = req. body.account_type;
+  var cnpj = req.body.cnpj;
+  var company_contact_name = req.body.company_contact_name;
+  var phone = req.body.phone;
+  var email = req.body.email;
+  var mobile_phone = req.body.mobile_phone;
+  var is_plan_active = req.body.is_plan_active;
+  var neighborhood = req.body.neighborhood;
+  var address = req.body.address;
+  var address_type = req.body.address_type;
+  var latitude = req.body.latitude;
+  var longitude = req.body.longitude;
+  var city_id = req.body.city_id;
+  var city = req.body.city;
+  var zipcode = req.body.zipcode;
+  var state = req.body.state;
+  var frequency = req.body.frequency;
+  var is_automatic = req.body.is_automatic;
+  var score = req.body.score;
+  var category_id = req.body.category_id;
+  var category_name = req.body.category_name;
+  var salary_requirements = req.body.salary_requirements;
+  var characteristics = req.body.characteristics;
+  var starts = req.body.starts;
+  var amount_candidates = req.body.amount_candidates;
+  var amount_visualizations = req.body.amount_visualizations;
+  var feedback = req.body.feedback;
+  var salary_research = req.body.salary_research;
+  var relevancy = req.body.relevancy;
+
+  // Second Create a Json with require format
+  var data = {
+    "id": parseInt(id),
+    "title": title,
+    "description": description,
+    "created_at": "2016-07-01 13:06:12",
+    "is_contact_available": is_contact_available ,
+    "is_active": true,
+    "hirer":{
+      "id": parseInt(idHirer),
+      "name": nameHirer,
+      "account_type": account_type,
+      "cnpj": cnpj,
+      "company_contact_name": company_contact_name,
+      "phone": phone,
+      "email": email,
+      "mobile_phone": mobile_phone,
+      "is_plan_active": true
+    },
+    "location":{
+      "neighborhood": neighborhood,
+      "address": address,
+      "address_type": address_type,
+      "latitude": latitude,
+      "longitude": longitude,
+      "city_id": city_id,
+      "city": city,
+      "zipcode": zipcode,
+      "state": state
+    },
+    "frequency": frequency,
+    "is_automatic": is_automatic,
+    "score":score,
+    "category":{
+      "id":category_id,
+      "name": category_name
+    },
+    "salary_requirements": salary_requirements,
+    "characteristics":[
+      characteristics
+    ],
+    "starts": starts,
+    "amount_candidates": amount_candidates,
+    "amount_visualizations":amount_visualizations,
+    "feedback": feedback,
+    "salary_research": salary_research,
+    "relevancy": relevancy
+  };
+
+
+
   request.post({url:'http://ec2-35-164-223-211.us-west-2.compute.amazonaws.com/opportunities', json: true, headers: {"content-type": "application/json"}, body: data}, function(err,httpResponse,body){
-    /* ... */
-    console.log("entrou aqui");
     console.log(body);
+    console.log(httpResponse.statusCode);
+    res.send(body);
   })
 });
 module.exports = router;

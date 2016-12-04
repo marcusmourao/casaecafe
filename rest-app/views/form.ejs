@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <title>Estágio casa e Café</title>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <form action="/send" method="post">
+    <div class="row">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="id" name="id" type="text">
+                    <label for="id">Id</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="title" name="title" type="text">
+                    <label for="title">Title</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="description" name="description" type="text">
+                    <label for="description">Description</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="created_at" name="created_at" type="text">
+                    <label for="created_at">Create At</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="is_contact_available" name="is_contact_available"  type="text">
+                    <label for="is_contact_available">is_contact_available</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="input-field inline">
+                        <input id="is_active" name="is_active" value="true" type="text">
+                        <label for="is_active" data-error="wrong" data-success="right">Is Active</label>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="idHirer" name="idHirer" type="text">
+            <label for="idHirer">Id Hirer</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="nameHirer" name="nameHirer" type="text">
+            <label for="nameHirer">Name Hirer</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="account_type" name="account_type" type="text">
+            <label for="account_type">account_type</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="cnpj" name="cnpj" type="text">
+            <label for="cnpj">Cnpj Hirer</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="company_contact_name" name="company_contact_name" type="text">
+            <label for="company_contact_name">company_contact_name Hirer</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="phone" name="phone" type="text">
+            <label for="phone">Phone Hirer</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="email" name="email" type="text">
+            <label for="email">email Hirer</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="mobile_phone" name="mobile_phone" type="text">
+            <label for="mobile_phone">mobile_phone Hirer</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="is_plan_active" name="is_plan_active" type="text">
+            <label for="is_plan_active">is_plan_active Hirer</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="neighborhood" name="neighborhood" type="text">
+            <label for="neighborhood">neighborhood</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="address" name="address" type="text">
+            <label for="address">address</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="address_type" name="address_type" type="text">
+            <label for="address_type">address_type</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="latitude" name="latitude" type="text">
+            <label for="latitude">latitude</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="longitude" name="longitude" type="text">
+            <label for="longitude">longitude</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="city_id" name="city_id" type="text">
+            <label for="city_id">city_id</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="city" name="city" type="text">
+            <label for="city">city</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="zipcode" name="zipcode" type="text">
+            <label for="zipcode">zipcode</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="state" name="state" type="text">
+            <label for="state">state</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="frequency" name="frequency" type="text">
+            <label for="frequency">frequency</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="is_automatic" name="is_automatic" type="text">
+            <label for="is_automatic">is_automatic</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="score" name="score" type="text">
+            <label for="score">score</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="category_id" name="category_id" type="text">
+            <label for="category_id">category id</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="category_name" name="category_name" type="text" >
+            <label for="category_name">category name</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="salary_requirements" name="salary_requirements" type="text" >
+            <label for="salary_requirements">salary_requirements</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="characteristics" name="characteristics" type="text">
+            <label for="characteristics">characteristics</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="starts" name="starts" type="text">
+            <label for="starts">starts</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="amount_candidates" name="amount_candidates" type="text">
+            <label for="amount_candidates">amount_candidates</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="amount_visualizations" name="amount_visualizations" type="text">
+            <label for="amount_visualizations">amount_visualizations</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="feedback" name="feedback" type="text">
+            <label for="feedback">feedback</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="salary_research" name="salary_research" type="text">
+            <label for="salary_research">salary_research</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="relevancy" name="relevancy" type="text">
+            <label for="relevancy">relevancy</label>
+        </div>
+    </div>
+        <input class="btn btn-large" type="submit" value="Enviar">
+    </form>
+</div>
+</body>
+</html>
